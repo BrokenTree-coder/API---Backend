@@ -37,6 +37,8 @@ app.use((req, res, next) => {
 app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/pets', authMiddleware, petsRouter); // Rota de pets protegida
+// Rotas da WEB (Páginas Renderizadas) [cite: 502]
+app.use('/', webRoutes);
 
 // Rota de Teste do pug
 app.get('/hello-pug', (req, res) => {
