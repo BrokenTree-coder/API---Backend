@@ -1,29 +1,22 @@
-code
-Pug
-// src/views/pets.pug
-
 doctype html
 html(lang="pt-BR")
   head
     title= title
-    // Adicionaremos nosso CSS aqui mais tarde
   body
     h1 Lista de Pets Cadastrados
 
-    //- Condicional: verifica se a lista de pets não está vazia
+    //- Bloco condicional: só mostra a lista se o array 'pets' não estiver vazio [cite: 476]
     if pets.length > 0
-      //- Laço: itera sobre cada 'pet' no array 'pets'
+      //- Laço de repetição: cria um card para cada item no array 'pets' [cite: 477]
       each pet in pets
-        div.pet-card
+        div.pet-card(style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px;")
+          //- Renderiza o valor da propriedade 'nome' do pet atual [cite: 479]
           h3= pet.nome
-          p 
+          p
             strong Espécie: 
             span= pet.especie
-          //- Condicional dentro do laço
-          if pet.raca
-            p 
-              strong Raça: 
-              span= pet.raca
+          p
+            strong Raça: 
+            span= pet.raca
     else
-      //- Mensagem para o caso de não haver pets
       p Nenhum pet cadastrado no momento.
