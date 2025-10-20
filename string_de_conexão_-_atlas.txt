@@ -1,1 +1,0 @@
-mongodb+srv://BrokenTree:Maedre0703@cluster0.foikspf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
